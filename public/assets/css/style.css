@@ -1,0 +1,186 @@
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  background-color: #eee;
+  background-image: url('../img/bg_fabric.png');
+  font-family: 'Quantico', sans-serif;
+}
+#main {
+  position: relative;
+  *zoom: 1;
+}
+#main:before,
+#main:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+#main:after {
+  clear: both;
+}
+.players {
+  *zoom: 1;
+}
+.players:before,
+.players:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.players:after {
+  clear: both;
+}
+.player.tradingcard {
+  position: relative;
+  margin: 5px 2px;
+  width: 150px;
+  height: 165px;
+  display: inline-block;
+  background-color: white;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+}
+.player.tradingcard.float {
+  float: left;
+}
+.player.tradingcard .inner {
+  overflow: hidden;
+  position: relative;
+  background-color: #ededee;
+  margin: 2px;
+  height: 161px;
+  border-radius: 4px;
+}
+.player.tradingcard .name,
+.player.tradingcard .number,
+.player.tradingcard .actions {
+  position: absolute;
+}
+.player.tradingcard .number {
+  color: white;
+  font-size: 15px;
+  text-shadow: 1px 1px #000000;
+  top: 0;
+}
+.player.tradingcard .name {
+  color: white;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 2px 0;
+  width: 146px;
+  left: 2px;
+  bottom: 2px;
+}
+.player.tradingcard .actions {
+  width: 150px;
+  top: 5px;
+  z-index: 1000;
+  display: none;
+  text-align: center;
+}
+.player.tradingcard:hover .actions {
+  display: block;
+}
+.players.masonry {
+  *zoom: 1;
+}
+.players.masonry:before,
+.players.masonry:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.players.masonry:after {
+  clear: both;
+}
+.players.masonry > .player {
+  position: relative;
+  margin-bottom: 5px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.players.masonry > .player:nth-child(1) > div > div {
+  background-color: #85d269;
+}
+.players.masonry > .player:nth-child(2),
+.players.masonry > .player:nth-child(3) {
+  width: 50%;
+  float: left;
+}
+.players.masonry > .player:nth-child(2) > div > div,
+.players.masonry > .player:nth-child(3) > div > div {
+  background-color: #a5de90;
+}
+.players.masonry > .player:nth-child(4) {
+  *zoom: 1;
+}
+.players.masonry > .player:nth-child(4):before,
+.players.masonry > .player:nth-child(4):after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.players.masonry > .player:nth-child(4):after {
+  clear: both;
+}
+.players.masonry > .player:nth-child(n+4) {
+  width: 33.3333%;
+  float: left;
+}
+.players.masonry > .player > div {
+  padding: 2px;
+}
+.players.masonry > .player > div > div {
+  padding: 10px 5px;
+  background-color: #fff;
+  background-color: #eef9ea;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+}
+.players.masonry > .player > div > div .number {
+  font-size: 26px;
+  display: none;
+}
+.players.masonry > .player > div > div .name {
+  font-size: 20px;
+  height: 200px;
+}
+.players.masonry > .player > div > div .highfives {
+  width: 120px;
+  position: absolute;
+  bottom: 0;
+}

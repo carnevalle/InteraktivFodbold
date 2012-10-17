@@ -1,0 +1,167 @@
+@import "mixins.less";
+
+@green: #75CC55;
+@darkgreen: #518C3B;
+@blue: #00344d;
+
+
+body{
+	background-color: #eee;
+	background-image: url('../img/bg_fabric.png');
+	font-family: 'Quantico', sans-serif;
+}
+
+#main{
+	position:relative;
+	.clearfix;
+}
+
+
+
+@cardwidth: 150px;
+@cardheight: @cardwidth * 1.1;
+
+@cardouterborder: 1px;
+@cardinnerborder: 2px;
+
+.players{
+	.clearfix;
+}
+.player{
+	&.tradingcard{
+		position: relative;
+		margin: 5px 2px;
+		width: @cardwidth;
+		height: @cardheight;
+		display: inline-block;
+
+		&.float{
+			float: left;
+		}
+
+		//background-color: @blue;
+		background-color:white;
+		.box-shadow(1px 1px 1px rgba(0,0,0,.4));
+		border: @cardouterborder solid rgba(0,0,0,.2);
+		border-radius: 2px;
+
+		.inner{
+			overflow: hidden;
+			position: relative;
+			background-color: #ededee;
+			margin: @cardinnerborder;
+			height: @cardheight - @cardinnerborder*2;
+			border-radius: 4px;
+		}
+
+		.name, .number, .actions{
+			position: absolute;
+		}
+
+		.number{
+			color: white;
+			font-size: 15px;
+			text-shadow: 1px 1px rgba(0,0,0,1);
+			top: 0;
+		}
+
+		.name{
+
+			color: white;
+			text-align: center;
+			background-color: rgba(0,0,0, 0.7);
+			padding: 2px 0;
+			width: @cardwidth - @cardinnerborder * 2;
+
+			left: @cardinnerborder;
+			bottom: @cardinnerborder;
+		}
+
+		.actions{
+			width: @cardwidth;
+			top: 5px;
+			z-index: 1000;
+			display: none;
+			text-align: center;
+		}
+
+		&:hover{
+			.actions{
+				display: block;
+			}
+		}		
+	}
+}
+
+
+.players.masonry{
+	.clearfix;
+
+	> .player{
+		position: relative;
+
+		margin-bottom: 5px;
+
+		-webkit-transition: all 0.5s ease-in-out;
+		-moz-transition: all 0.5s ease-in-out;
+		-o-transition: all 0.5s ease-in-out;
+		-ms-transition: all 0.5s ease-in-out;
+		transition: all 0.5s ease-in-out;
+
+		&:nth-child(1){
+			> div{
+				> div{
+					background-color: lighten(@green, 5%);
+				}
+			}
+		}
+		&:nth-child(2), &:nth-child(3){
+			width: 50%;
+			float: left;
+
+			> div{
+				> div{
+					background-color: lighten(@green, 15%);	
+				}
+			}						
+		}
+
+		&:nth-child(4){
+			.clearfix;
+		}
+
+		&:nth-child(n+4){
+			width: 33.3333%;
+			float: left;			
+		}
+
+		> div{
+			padding: 2px;
+
+			> div{
+				padding: 10px 5px;	
+				background-color: #fff;
+				background-color: lighten(@green, 38%);	
+				.box-shadow(1px 1px 1px rgba(0,0,0,.1));
+				border: 1px solid rgba(0,0,0,.2);
+				border-radius: 2px;				
+
+				.number{
+					font-size: 26px;
+					display: none;
+				}
+
+				.name{
+					font-size: 20px;
+					height: 200px;
+				}
+
+				.highfives{
+					width: 120px;
+					position: absolute;
+					bottom: 0;
+				}				
+			}			
+		}		
+	}
+}

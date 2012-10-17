@@ -1,0 +1,29 @@
+{
+	"type": "Collection",
+	"properties": {
+		"hometeam": {
+			"name": "hometeam",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "hometeam",
+			"order": 0
+		},
+		"awayteam": {
+			"name": "awayteam",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "awayteam",
+			"order": 1
+		},
+		"date": {
+			"name": "date",
+			"type": "number",
+			"typeLabel": "number",
+			"required": true,
+			"id": "date",
+			"order": 2
+		}
+	}
+}

@@ -1,0 +1,37 @@
+{
+	"type": "Collection",
+	"properties": {
+		"name": {
+			"name": "name",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "name",
+			"order": 0
+		},
+		"number": {
+			"name": "number",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "number",
+			"order": 1
+		},
+		"club": {
+			"name": "club",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "club",
+			"order": 2
+		},
+		"highfives": {
+			"name": "highfives",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "highfives",
+			"order": 3
+		}
+	}
+}

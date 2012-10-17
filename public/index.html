@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Interaktiv Fodbold</title>
+
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <!-- <link href="assets/css/isotope.css" rel="stylesheet"> -->
+
+    <link href='http://fonts.googleapis.com/css?family=Quantico:400,700' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script type="text/javascript" src="dpd.js"></script>
+
+	<script type="text/javascript">
+
+        function swapElements(elm1, elm2) {
+            console.log("Trying to swap");
+            var parent1, next1,
+                parent2, next2;
+
+            parent1 = elm1.parentNode;
+            next1   = elm1.nextSibling;
+            parent2 = elm2.parentNode;
+            next2   = elm2.nextSibling;
+
+            parent1.insertBefore(elm2, next1);
+            parent2.insertBefore(elm1, next2);
+        }
+
+        $(function() {
+          $(".navbar").click(function() {  
+              $("#af159b6753f1a80e").swap({  
+                  target: "378bb9e059d03812", // Mandatory. The ID of the element we want to swap with  
+                  opacity: "0.5", // Optional. If set will give the swapping elements a translucent effect while in motion  
+                  speed: 1000, // Optional. The time taken in milliseconds for the animation to occur  
+                  callback: function() { // Optional. Callback function once the swap is 
+                      // Update the layout.
+                      swapElements($("#af159b6753f1a80e")[0], $("#378bb9e059d03812")[0]);
+                      var options = {
+                        autoResize: true, // This will auto-update the layout when the browser window is resized.
+                        container: $('#main'), // Optional, used for some extra CSS styling
+                        offset: 15, // Optional, the distance between grid items
+                        itemWidth: 150 // Optional, the width of a grid item
+                      };
+
+                      App.handler.wookmarkClear();
+
+                      var handler = $('.players > div');
+                      App.handler = handler;
+                      handler.wookmark(options);
+                  }  
+              });  
+          });         
+        });    
+	</script>
+</head>
+<body>
+	<div id="fb-root"></div>
+	<script>
+	  var fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '515032481859090', // App ID
+	      channelUrl : '//localhost:2403//channel.html', // Channel File
+	      status     : true, // check login status
+	      cookie     : true, // enable cookies to allow the server to access the session
+	      xfbml      : true  // parse XFBML
+	    });
+
+	    //InteraktivApp.init();
+	  };
+
+	  // Load the SDK Asynchronously
+	  (function(d){
+	     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement('script'); js.id = id; js.async = true;
+	     js.src = "//connect.facebook.net/en_US/all.js";
+	     ref.parentNode.insertBefore(js, ref);
+	   }(document));
+	</script>
+
+
+    <div class="navbar navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Project name</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="span12" id="main">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12" id="footer">
+                <div style="text-align:center"><a id="login"><img src="assets/img/fb-connect.png" /></a></div>
+            </div>
+        </div>
+    </div> <!-- /container -->
+
+    <script type="text/template" id="template-matches">
+    	{[ _(matches).each(function(match){ ]}
+    		 {{ moment(match.date).format('DD/MM YYYY kl. HH:mm') }} {{ match.hometeam.name }}-{{match.awayteam.name}}
+    	{[ }) ]}
+    </script>
+
+    <!-- This is where templates start -->
+    <script type="text/template" id="template-players">
+
+    </script>    
+
+    <script type="text/template" id="template-player">
+            <div class="actions"><button class="btn btn-mini" data-id="{{id}}">Highfive</button></div>
+            <div class="inner">
+                <img src="assets/img/goodson.jpg" />
+                <div class="number">#{{number}}</div>
+            </div>
+            <div class="name">
+                {{name}} {{highfives}}
+            </div> 
+    </script>      
+    <!-- This is where templates end -->
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/json2/20110223/json2.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.1/underscore-min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js"></script>
+	<script src="assets/js/backbone.eventbinder.js"></script>
+	<script src="assets/js/backbone.wreqr.js"></script>
+	<script src="assets/js/backbone.marionette.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/1.7.2/moment.min.js"></script>
+	<script src="assets/js/lang/da.js"></script>
+
+  <script src="assets/js/md5.js"></script>
+  <script src="assets/js/jquery-ui-1.9.0.highlight.min.js"></script>
+
+  <script src="assets/js/jquery.wookmark.min.js"></script>
+  <script src="assets/js/jquery.isotope.min.js"></script>
+  <script src="assets/js/jquery-swapsies.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="app/models/player.js"></script>
+  <script src="app/collections/players.js"></script>
+  <script src="app/views/player.js"></script>
+
+  <script src="app/appconfig.js"></script>
+  <script src="app/app.js"></script>
+</body>
+</html>

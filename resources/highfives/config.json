@@ -1,0 +1,37 @@
+{
+	"type": "Collection",
+	"properties": {
+		"playerid": {
+			"name": "playerid",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "playerid",
+			"order": 0
+		},
+		"userid": {
+			"name": "userid",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "userid",
+			"order": 1
+		},
+		"timestamp": {
+			"name": "timestamp",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "timestamp",
+			"order": 2
+		},
+		"number": {
+			"name": "number",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "number",
+			"order": 3
+		}
+	}
+}
